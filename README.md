@@ -7,13 +7,19 @@
 ```bash
 conda create -n ehr python=3.7
 ```
-### python 套件
+### Python 套件
 ```bash
 pip install -r requirements.txt
 ```
+## Checkpoint
+|        Class         | Description                          
+| :------------------: | :----------------------------------- 
+|     `formal_split`          | [formal_split](https://drive.google.com/file/d/14g1haykEVEspO62SMqWVHZg6Ua-UY7gG/view?usp=drive_link)
+|     `Add_i2b2_lower_continue`          | [Mask predict](https://drive.google.com/file/d/1mT_6Y2Bplq0ullOx8NgMXlAdSUXXM0-G/view?usp=drive_link)
+|     `Add_i2b2_formal_split`          | [Mask predict](https://drive.google.com/file/d/1mT_6Y2Bplq0ullOx8NgMXlAdSUXXM0-G/view?usp=drive_link)
 ## 運行方式
-請新增 ```raw_data/``` folder 在路徑下並執行 ```preprocess.ipynb``` 中的程式，程式將會創建 train test dev dataset ，其格式為:
-### train dev data format
+請新增 ```raw_data/``` folder 在路徑下並執行 ```data_create.ipynb``` 中的程式，程式將會創建 train test dev dataset ，其格式為:
+### Train Dev data format
 ```python3
 {
     "text": '...', // document content
@@ -21,7 +27,7 @@ pip install -r requirements.txt
     'spans': [{'label': 'MEDICALRECORD' ...}],
 }
 ```
-### test data format
+### Test data format
 ```python3
 {
     "text": '...', // document content
