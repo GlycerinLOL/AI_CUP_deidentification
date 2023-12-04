@@ -1,7 +1,7 @@
 from typing import Union, Optional, Sequence
 
 from .sentencizers import SpacySentencizer, NoteSentencizer
-from .tokenizers import ClinicalSpacyTokenizer, SpacyTokenizer, CoreNLPTokenizer
+from .tokenizers import ClinicalSpacyTokenizer, SpacyTokenizer
 
 
 class PreprocessingLoader(object):
@@ -26,7 +26,7 @@ class PreprocessingLoader(object):
             raise ValueError('Invalid sentencizer - does not exist')
 
     @staticmethod
-    def get_tokenizer(tokenizer: str) -> Union[SpacyTokenizer, ClinicalSpacyTokenizer, CoreNLPTokenizer]:
+    def get_tokenizer(tokenizer: str) -> Union[SpacyTokenizer, ClinicalSpacyTokenizer]:
         """
         Initialize the tokenizer based on the CLI arguments
         We can either use the default scipacy (en_core_sci_lg or en_core_web_sm)
@@ -35,12 +35,10 @@ class PreprocessingLoader(object):
         Args:
             tokenizer (str): Specify which tokenizer you want to use
         Returns:
-            Union[SpacyTokenizer, ClinicalSpacyTokenizer, CoreNLPTokenizer]: An object of the requested tokenizer class
+            Union[SpacyTokenizer, ClinicalSpacyTokenizer]: An object of the requested tokenizer class
         """
         if tokenizer in ['en_core_sci_lg', 'en_core_sci_md', 'en_core_sci_sm', 'en_core_web_sm', 'en']:
             return SpacyTokenizer(spacy_model=tokenizer)
-        elif tokenizer == 'corenlp':
-            return CoreNLPTokenizer()
         elif tokenizer == 'clinical':
             # Abbreviations - we won't split tokens that match these (e.g 18F-FDG)
             return ClinicalSpacyTokenizer(spacy_model='en_core_sci_sm')

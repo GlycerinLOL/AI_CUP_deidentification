@@ -3,9 +3,6 @@ from typing import Dict, NoReturn
 
 from transformers import AutoConfig, AutoModelForTokenClassification
 
-from .crf.utils import allowed_transitions
-from .crf import CRFBertModelForTokenClassification
-
 
 class ModelPicker(object):
     """
@@ -54,31 +51,3 @@ class ModelPicker(object):
             use_auth_token=self._use_auth_token,
         )
 
-    def get_crf_bert_model(
-            self,
-            notation: str,
-            id_to_label: Dict[int, str]
-    ) -> CRFBertModelForTokenClassification:
-        """
-        Return a model that uses crf to process the model logits for obtaining the predictions
-        and calculating the loss. Set the CRF constraints based on the notation and the labels.
-        For example - B-DATE, I-LOC is not valid, since we add the constraint that the I-LOC
-        label cannot follow the B-DATE label and that only the I-DATE label can follow the B-DATE label
-        Args:
-            notation (str): The NER notation - e.g BIO, BILOU
-            id_to_label (Mapping[int, str]): Mapping between the NER label ID and the NER label
-        Returns:
-            (CRFBertModelForTokenClassification): Return crf token classification model
-        """
-        constraints = {
-            'crf_constraints': allowed_transitions(constraint_type=notation, labels=id_to_label)
-        }
-        return CRFBertModelForTokenClassification.from_pretrained(
-            self._model_name_or_path,
-            from_tf=bool(".ckpt" in self._model_name_or_path),
-            config=self._config,
-            cache_dir=self._cache_dir,
-            revision=self._model_revision,
-            use_auth_token=self._use_auth_token,
-            **constraints,
-        )

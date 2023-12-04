@@ -519,10 +519,6 @@ class SequenceTagger(object):
         elif self._post_process == 'logits':
             model = model_picker.get_argmax_bert_model()
             post_processor = post_process_picker.get_logits()
-        elif self._post_process == 'crf':
-            model = model_picker.get_crf_bert_model(notation=self._notation, id_to_label=self._id_to_label)
-            post_processor = post_process_picker.get_crf()
-            post_processor.set_crf(model.crf)
         else:
             raise ValueError('Invalid post_process argument')
         return model, post_processor
