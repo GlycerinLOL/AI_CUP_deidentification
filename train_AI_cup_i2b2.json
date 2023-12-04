@@ -4,7 +4,7 @@
     "model_name_or_path":"roberta-large",
     "task_name":"ner",
     "notation":"BILOU",
-    "ner_types":["DOCTOR", "DATE", "IDNUM", "MEDICALRECORD", "PATIENT", "HOSPITAL", "TIME", "DEPARTMENT", "CITY", "ZIP", "STREET", "STATE", "ORGANIZATION", "AGE", "DURATION", "SET", "PHONE", "LOCATION-OTHER", "COUNTRY", "URL", "ROOM"],
+    "ner_types":["DOCTOR", "DATE", "IDNUM", "MEDICALRECORD", "PATIENT", "HOSPITAL", "TIME", "DEPARTMENT", "CITY", "ZIP", "STREET", "STATE", "ORGANIZATION", "AGE", "DURATION", "SET", "PHONE", "LOCATION-OTHER", "COUNTRY", "URL", "ROOM", "USERNAME", "PROFESSION", "FAX", "DEVICE", "EMAIL", "BIOID", "HEALTHPLAN"],
     "train_file":["First_Phase_Text_Dataset_addi2b2/formal_chunk_size_32/ner_datasets/train.jsonl"],
     "validation_file":["First_Phase_Text_Dataset_addi2b2/formal_chunk_size_32/ner_datasets/validation.jsonl"],
     "test_file":null,
@@ -19,8 +19,8 @@
     "validation_spans_file":"First_Phase_Text_Dataset_addi2b2/formal_chunk_size_32/validation_spans.jsonl",
     "evaluation_mode":"strict",
     "ner_type_maps":[
-       ["PHI", "PHI","PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI","PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI"],
-       ["PHI+", "PHI+","PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+","PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+"]
+        ["PHI", "PHI","PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI","PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI"],
+        ["PHI+", "PHI+","PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+","PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+"]
    ],
     "output_dir":"chpt_addi2b2/formal_roberta-large_allsplit/output",
     "logging_dir":"chpt_addi2b2/formal_roberta-large_allsplit/log",

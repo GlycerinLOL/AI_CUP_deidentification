@@ -4,7 +4,7 @@
     "model_name_or_path":"/home/ting/code/ehr_deidentification/chpt_addi2b2/formal_roberta-large_allsplit_lower_continue/output/checkpoint-47047",
     "task_name":"ner",
     "notation":"BILOU",
-    "ner_types":["DOCTOR", "DATE", "IDNUM", "MEDICALRECORD", "PATIENT", "HOSPITAL", "TIME", "DEPARTMENT", "CITY", "ZIP", "STREET", "STATE", "ORGANIZATION", "AGE", "DURATION", "SET", "PHONE", "LOCATION-OTHER", "COUNTRY", "URL", "ROOM"],
+    "ner_types":["DOCTOR", "DATE", "IDNUM", "MEDICALRECORD", "PATIENT", "HOSPITAL", "TIME", "DEPARTMENT", "CITY", "ZIP", "STREET", "STATE", "ORGANIZATION", "AGE", "DURATION", "SET", "PHONE", "LOCATION-OTHER", "COUNTRY", "URL", "ROOM", "USERNAME", "PROFESSION", "FAX", "DEVICE", "EMAIL", "BIOID", "HEALTHPLAN"],
     "output_predictions_file": "/home/ting/code/ehr_deidentification/p_eval_addi2b2/formal_roberta-large_allsplit_lower_continue/predictions.jsonl",
     "train_file":null,
     "validation_file":["/home/ting/code/ehr_deidentification/First_Phase_Text_Dataset_addi2b2/formal_all_split_lower_continue/ner_datasets/validation.jsonl"],
@@ -19,8 +19,8 @@
     "validation_spans_file":"/home/ting/code/ehr_deidentification/First_Phase_Text_Dataset_addi2b2/formal_all_split_lower_continue/validation_spans.jsonl",
     "evaluation_mode":"strict",
     "ner_type_maps":[
-       ["PHI", "PHI","PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI","PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI"],
-       ["PHI+", "PHI+","PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+","PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+"]
+        ["PHI", "PHI","PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI","PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI", "PHI"],
+        ["PHI+", "PHI+","PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+","PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+", "PHI+"]
    ],
     "output_dir":"/home/ting/code/ehr_deidentification/chpt_addi2b2/formal_roberta-large_allsplit_lower_continue/output/checkpoint-47047",
     "logging_dir":"/home/ting/code/ehr_deidentification/chpt_addi2b2/formal_roberta-large_allsplit_lower_continue/log",
