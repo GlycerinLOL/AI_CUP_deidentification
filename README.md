@@ -1,5 +1,7 @@
-# AICUP2023-TEAM-3868
-此專案為 AICUP 隱私保護與醫學數據標準化競賽：解碼臨床病例、讓數據說故事比賽的Github code，程式部分我們有參考 [Robust DeID: De-Identification of Medical Notes using Transformer Architectures](https://github.com/obi-ml-public/ehr_deidentification/tree/main) 的訓練方式，並且我們設計了獨特的 PostProcess System
+# AI CUP 2023-TEAM-3868
+隨著醫學科技的快速發展，醫療領域的數據應用變得越來越重要。這些數據不僅有助於臨床醫生更好地理解病患的健康狀況，還可以用於疾病預測、醫療研究以及醫療政策的制定。然而，這種數據的使用也帶來了一個關鍵問題，即隱私保護。如何在充分利用醫學數據的同時確保病患的隱私成為了一個亟待解決的挑戰。
+
+此 project 為 AI CUP 隱私保護與醫學數據標準化競賽：解碼臨床病例、讓數據說故事比賽的 Github code，程式部分我們有參考 [Robust DeID: De-Identification of Medical Notes using Transformer Architectures](https://github.com/obi-ml-public/ehr_deidentification/tree/main) 的訓練方式，並且設計了獨特的 PostProcess System，資料的部分我們還增加了 [i2b2 資料集](https://portal.dbmi.hms.harvard.edu/)，讓 label 從原本的 21 個增加至 28 個，增添了一定的泛化能力。
 ## 運行環境
 ### 使用 Anaconda 建立環境
 ```bash
@@ -10,7 +12,7 @@ conda create -n ehr python=3.7
 pip install -r requirements.txt
 ```
 ## 運行方式
-請新增 ```raw_data/``` folder後執行 ```preprocess.ipynb``` 中的程式，將會創建 train test dev dataset 格式為
+請新增 ```raw_data/``` folder 在路徑下並執行 ```preprocess.ipynb``` 中的程式，程式將會創建 train test dev dataset ，其格式為:
 ### train dev data format
 ```python3
 {
